@@ -1,0 +1,68 @@
+openremote-postgresql-1  | 2022-07-24 23:02:53.260 CEST [37] LOG:  database system is ready to accept connections
+openremote-postgresql-1  |  done
+openremote-postgresql-1  | server started
+openremote-postgresql-1  | CREATE DATABASE
+openremote-postgresql-1  |
+openremote-postgresql-1  |
+openremote-postgresql-1  | /usr/local/bin/docker-entrypoint.sh: sourcing /docker-entrypoint-initdb.d/10_postgis.sh
+openremote-postgresql-1  | CREATE DATABASE
+openremote-postgresql-1  | Loading PostGIS extensions into template_postgis
+openremote-postgresql-1  | CREATE EXTENSION
+openremote-postgresql-1  | CREATE EXTENSION
+openremote-postgresql-1  | CREATE EXTENSION
+openremote-keycloak-1    | 2022-07-24 23:03:01,836 INFO  [org.keycloak.common.Profile] (main) Preview feature enabled: token_exchange
+openremote-keycloak-1    | 2022-07-24 23:03:01,901 INFO  [org.keycloak.quarkus.runtime.hostname.DefaultHostnameProvider] (main) Hostname settings: FrontEnd: localhost, Strict HTTPS: true, Path: <request>, Strict BackChannel: false, Admin: <request>, Port: -1, Proxied: true
+openremote-keycloak-1    | 2022-07-24 23:03:02,397 WARN  [io.agroal.pool] (agroal-11) Datasource '<default>': Connection to postgresql:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+openremote-keycloak-1    | 2022-07-24 23:03:02,399 WARN  [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator] (JPA Startup Thread: keycloak-default) HHH000342: Could not obtain connection to query metadata: org.postgresql.util.PSQLException: Connection to postgresql:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+openremote-keycloak-1    |      at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:319)
+openremote-keycloak-1    |      at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+openremote-keycloak-1    |      at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+openremote-keycloak-1    |      at org.postgresql.Driver.makeConnection(Driver.java:400)
+openremote-keycloak-1    |      at org.postgresql.Driver.connect(Driver.java:259)
+openremote-keycloak-1    |      at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:677)
+openremote-keycloak-1    |      at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:228)
+openremote-keycloak-1    |      at org.postgresql.ds.common.BaseDataSource.getConnection(BaseDataSource.java:103)
+openremote-keycloak-1    |      at org.postgresql.xa.PGXADataSource.getXAConnection(PGXADataSource.java:49)
+openremote-keycloak-1    |      at org.postgresql.xa.PGXADataSource.getXAConnection(PGXADataSource.java:35)
+openremote-keycloak-1    |      at io.agroal.pool.ConnectionFactory.createConnection(ConnectionFactory.java:216)
+openremote-keycloak-1    |      at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:513)
+openremote-keycloak-1    |      at io.agroal.pool.ConnectionPool$CreateConnectionTask.call(ConnectionPool.java:494)
+openremote-keycloak-1    |      at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+openremote-keycloak-1    |      at io.agroal.pool.util.PriorityScheduledExecutor.beforeExecute(PriorityScheduledExecutor.java:75)
+openremote-keycloak-1    |      at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1126)
+openremote-keycloak-1    |      at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+openremote-keycloak-1    |      at java.base/java.lang.Thread.run(Thread.java:829)
+openremote-keycloak-1    | Caused by: java.net.ConnectException: Connection refused (Connection refused)
+openremote-keycloak-1    |      at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+openremote-keycloak-1    |      at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:412)
+openremote-keycloak-1    |      at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:255)
+openremote-keycloak-1    |      at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:237)
+openremote-keycloak-1    |      at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+openremote-keycloak-1    |      at java.base/java.net.Socket.connect(Socket.java:609)
+openremote-keycloak-1    |      at org.postgresql.core.PGStream.createSocket(PGStream.java:241)
+openremote-keycloak-1    |      at org.postgresql.core.PGStream.<init>(PGStream.java:98)
+openremote-keycloak-1    |      at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:109)
+openremote-keycloak-1    |      at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+openremote-keycloak-1    |      ... 17 more
+openremote-keycloak-1    |
+openremote-keycloak-1    | 2022-07-24 23:03:03,370 WARN  [org.infinispan.PERSISTENCE] (keycloak-cache-init) ISPN000554: jboss-marshalling is deprecated and planned for removal
+openremote-keycloak-1    | 2022-07-24 23:03:03,400 WARN  [io.agroal.pool] (agroal-11) Datasource '<default>': Connection to postgresql:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+openremote-keycloak-1    | 2022-07-24 23:03:03,426 WARN  [org.infinispan.CONFIG] (keycloak-cache-init) ISPN000569: Unable to persist Infinispan internal caches as no global state enabled
+openremote-keycloak-1    | 2022-07-24 23:03:03,477 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000556: Starting user marshaller 'org.infinispan.jboss.marshalling.core.JBossUserMarshaller'
+openremote-keycloak-1    | 2022-07-24 23:03:03,682 INFO  [org.infinispan.CONTAINER] (keycloak-cache-init) ISPN000128: Infinispan version: Infinispan 'Triskaidekaphobia' 13.0.9.Final
+openremote-keycloak-1    | 2022-07-24 23:03:03,839 INFO  [org.infinispan.CLUSTER] (keycloak-cache-init) ISPN000078: Starting JGroups channel `ISPN`
+openremote-keycloak-1    | 2022-07-24 23:03:03,840 INFO  [org.infinispan.CLUSTER] (keycloak-cache-init) ISPN000088: Unable to use any JGroups configuration mechanisms provided in properties {}. Using default JGroups configuration!
+openremote-keycloak-1    | 2022-07-24 23:03:04,039 WARN  [org.jgroups.protocols.UDP] (keycloak-cache-init) JGRP000015: the send buffer of socket MulticastSocket was set to 1.00MB, but the OS only allocated 212.99KB
+openremote-keycloak-1    | 2022-07-24 23:03:04,039 WARN  [org.jgroups.protocols.UDP] (keycloak-cache-init) JGRP000015: the receive buffer of socket MulticastSocket was set to 20.00MB, but the OS only allocated 212.99KB
+openremote-keycloak-1    | 2022-07-24 23:03:04,040 WARN  [org.jgroups.protocols.UDP] (keycloak-cache-init) JGRP000015: the send buffer of socket MulticastSocket was set to 1.00MB, but the OS only allocated 212.99KB
+openremote-keycloak-1    | 2022-07-24 23:03:04,041 WARN  [org.jgroups.protocols.UDP] (keycloak-cache-init) JGRP000015: the receive buffer of socket MulticastSocket was set to 25.00MB, but the OS only allocated 212.99KB
+openremote-keycloak-1    | 2022-07-24 23:03:06,059 INFO  [org.jgroups.protocols.pbcast.GMS] (keycloak-cache-init) 9af54c12b6b5-20446: no members discovered after 2006 ms: creating cluster as coordinator
+openremote-keycloak-1    | 2022-07-24 23:03:06,102 INFO  [org.infinispan.CLUSTER] (keycloak-cache-init) ISPN000094: Received new cluster view for channel ISPN: [9af54c12b6b5-20446|0] (1) [9af54c12b6b5-20446]
+openremote-keycloak-1    | 2022-07-24 23:03:06,116 INFO  [org.infinispan.CLUSTER] (keycloak-cache-init) ISPN000079: Channel `ISPN` local address is `9af54c12b6b5-20446`, physical addresses are `[172.20.0.3:33546]`
+openremote-keycloak-1    | 2022-07-24 23:03:06,786 INFO  [org.infinispan.CLUSTER] (main) ISPN000080: Disconnecting JGroups channel `ISPN`
+openremote-keycloak-1    | 2022-07-24 23:03:07,047 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Failed to start server in (production) mode
+openremote-keycloak-1    | 2022-07-24 23:03:07,047 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Failed to obtain JDBC connection
+openremote-keycloak-1    | 2022-07-24 23:03:07,048 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Connection to postgresql:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+openremote-keycloak-1    | 2022-07-24 23:03:07,051 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) ERROR: Connection refused (Connection refused)
+openremote-keycloak-1    | 2022-07-24 23:03:07,052 ERROR [org.keycloak.quarkus.runtime.cli.ExecutionExceptionHandler] (main) For more details run the same command passing the '--verbose' option. Also you can use '--help' to see the details about the usage of the particular command.
+container for service "keycloak" is unhealthy
